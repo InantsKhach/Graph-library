@@ -3,9 +3,9 @@
 #include <random>
 #include <ctime>
 
-#include <QApplication>
-#include <QGraphicsScene>
-#include <QGraphicsView>
+// #include <QApplication>
+// #include <QGraphicsScene>
+// #include <QGraphicsView>
 
 #include "AbstractGraphStorage.hpp"
 #include "AdjacencyListGraph.hpp"
@@ -20,7 +20,7 @@
 #include "RecursiveDivision.hpp"
 #include "MazeCellPredicateStraightLine.hpp"
 
-/*
+
 std::vector< Cell > dfs_algorithm(
         AbstractGraphStorage* g, MazeGraphRepresentation mg, 
         AbstractMaze* m, int start, int end )
@@ -113,7 +113,7 @@ std::vector< Cell > astar_algorithm(
     return road;
 
     //m->printWithPath(std::cout, road);
-}*/
+}
 
 void generate_maze_with_boxes(MazeWithBoxes& m, GenType& gen, 
         AbstractMazeGenerator* eng)
@@ -140,7 +140,7 @@ void generate_maze_with_walls(MazeWithWalls& m, GenType& gen,
 
 int main( int argc, char* argv[] )
 {
-    QApplication app(argc, argv);
+    //QApplication app(argc, argv);
 
     /*
     MazeWithBoxes m(5, 7);
@@ -224,16 +224,16 @@ int main( int argc, char* argv[] )
         {
             MazeGraphRepresentation mg(m, g);
             AbstractVertexPredicate* heuristic = new MazeCellPredicateStraightLine(&mg);
-            if (argv[i + 1] == "dfs"
+            if (argv[i + 1] == "dfs")
             {
                 dfs(*g, 0, w * h - 1, graphPath, cost);
             }
             else if (argv[i + 1] == "bfs")
-                path = bfs_algorithm(g, mg, m, 0, w * h - 1);
+                mazePath = bfs_algorithm(g, mg, m, 0, w * h - 1);
             else if (argv[i + 1] == "dijkstra")
-                path = dijkstra_algorithm(g, mg, m, 0, h * w - 1);
+                mazePath = dijkstra_algorithm(g, mg, m, 0, h * w - 1);
             else if (argv[i + 1] == "astar")
-                path = astar_algorithm(g, mg, m, heuristic, 0, w * h - 1);
+                mazePath = astar_algorithm(g, mg, m, heuristic, 0, w * h - 1);
             else
                 throw "Unknown type";
             ++i;
@@ -243,17 +243,17 @@ int main( int argc, char* argv[] )
         {
             if (argv[i + 1] == "console")
                 m->printWithPath(std::cout, mazePath);
-            else if (argv[i + 1] == "gui") {
-                QGraphicsScene scene;
-                QGraphicsView view( &scene );
-                view.resize( 800, 600 );
+            // else if (argv[i + 1] == "gui") {
+            //     QGraphicsScene scene;
+            //     QGraphicsView view( &scene );
+            //     view.resize( 800, 600 );
 
-                m->displayOnScene( &scene );
-                view.fitInView( 
-                        QRectF( 0, 0, m->width() * CELL_W, m->height() * CELL_H ) );
+            //     m->displayOnScene( &scene );
+            //     view.fitInView( 
+            //             QRectF( 0, 0, m->width() * CELL_W, m->height() * CELL_H ) );
 
-                view.show();
-            }
+            //     view.show();
+            // }
                 ;
 
         }
@@ -333,5 +333,5 @@ int main( int argc, char* argv[] )
     // m.print( std::cout );
 
  
-     return app.exec();
+    //return app.exec();
 }
