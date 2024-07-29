@@ -3,7 +3,7 @@
 #include <climits>
 #include <iostream>
 
-#define INF DBL_MAX
+#define INF std::numeric_limits<double>::max()
 
 
 

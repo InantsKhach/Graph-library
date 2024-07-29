@@ -68,6 +68,7 @@ public:
 
 	virtual void setEdgeValue( int u, int v, double value ) = 0;
 
+
 };
  
 

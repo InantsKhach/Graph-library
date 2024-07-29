@@ -19,6 +19,9 @@ public:
 
 	/// Generates content into provided maze of version 2
 	virtual void generate( MazeWithWalls& mz, GenType& gen ) = 0;
+
+    /// Virtual destructor
+    virtual ~AbstractMazeGenerator(){};
 };
 
 

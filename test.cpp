@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <random>
 #include <ctime>
+#include <string>
 
 // #include <QApplication>
 // #include <QGraphicsScene>
@@ -77,7 +78,7 @@ std::vector< Cell > dijkstra_algorithm(
     double cost = 0;
 
     dijkstra(*g, start, end, path, cost);
-    std::cout << "\nThe bfs algorithm\n" << "Cost value is " << cost << '\n';
+    std::cout << "\nThe dijkstra algorithm\n" << "Cost value is " << cost << '\n';
     for (auto elem : path)
         std::cout << elem << ' ';
 
@@ -178,9 +179,9 @@ int main( int argc, char* argv[] )
     */
     
     GenType gen(time(0));
-    AbstractMaze* m;
-    AbstractMazeGenerator* eng;
-    AbstractGraphStorage* g;
+    AbstractMaze* m = nullptr;
+    AbstractMazeGenerator* eng = nullptr;
+    AbstractGraphStorage* g = nullptr;
     
     std::vector< Cell > mazePath;
     std::vector< int > graphPath;
@@ -188,60 +189,69 @@ int main( int argc, char* argv[] )
     double cost = 0;
     for (int i = 1; i < argc; ++i)
     {
-        if (argv[i] == "-maze")
+        if (std::string(argv[i]) == "-maze")
         {
-            w = atoi(argv[i + 1]);
-            h = atoi(argv[i + 2]);
-            if (argv[i + 3] == "walls")
+            if (i + 3 >= argc)
+                throw std::runtime_error("Insufficient arguments for -maze");
+            w = std::stoi(std::string(argv[i + 1]));
+            h = std::stoi(std::string(argv[i + 2]));
+            if (std::string(argv[i + 3]) == "walls")
                 m = new MazeWithWalls(w, h);
-            else if (argv[i + 3] == "boxes")
+            else if (std::string(argv[i + 3]) == "boxes")
                 m = new MazeWithBoxes(w, h);
             else
                 throw "Unknown type";
             i += 3;
         }
-        else if (argv[i] == "-gen")
+        else if (std::string(argv[i]) == "-gen")
         {
-            if (argv[i + 1] == "dfs")
+            if (i + 1 >= argc)
+                throw std::runtime_error("Insufficient arguments for -gen");
+            if (std::string(argv[i + 1]) == "dfs")
                 eng = new RandomizedDFS();
-            else if (argv[i + 1] == "rec_div")
+            else if (std::string(argv[i + 1]) == "rec_div")
                 eng = new RecursiveDivision();
             else
                 throw "Unknown type";
             ++i;
         }
-        else if (argv[i] == "-graph")
+        else if (std::string(argv[i]) == "-graph")
         {
-            if (argv[i + 1] == "list")
+            if (i + 1 >= argc)
+                throw std::runtime_error("Insufficient arguments for -graph");
+            if (std::string(argv[i + 1]) == "list")
                 g = new AdjacencyListGraph(0);
-            else if (argv[i + 1] == "matrix")
+            else if (std::string(argv[i + 1]) == "matrix")
                 g = new AdjacencyMatrixGraph(0);
             else
                 throw "Unknown type";
             ++i;
         }
-        else if(argv[i] == "-run")
+        else if(std::string(argv[i]) == "-run")
         {
+            if (!m || !g)
+                throw std::runtime_error("Maze or graph not initialized");
             MazeGraphRepresentation mg(m, g);
             AbstractVertexPredicate* heuristic = new MazeCellPredicateStraightLine(&mg);
-            if (argv[i + 1] == "dfs")
+            if (std::string(argv[i + 1]) == "dfs")
             {
                 dfs(*g, 0, w * h - 1, graphPath, cost);
             }
-            else if (argv[i + 1] == "bfs")
+            else if (std::string(argv[i + 1]) == "bfs")
                 mazePath = bfs_algorithm(g, mg, m, 0, w * h - 1);
-            else if (argv[i + 1] == "dijkstra")
+            else if (std::string(argv[i + 1]) == "dijkstra")
                 mazePath = dijkstra_algorithm(g, mg, m, 0, h * w - 1);
-            else if (argv[i + 1] == "astar")
+            else if (std::string(argv[i + 1]) == "astar")
                 mazePath = astar_algorithm(g, mg, m, heuristic, 0, w * h - 1);
             else
                 throw "Unknown type";
             ++i;
             mazePath = mg.verticesToCells( graphPath );
+            delete heuristic;
         }
-        else if (argv[i] == "-display")
+        else if (std::string(argv[i]) == "-display")
         {
-            if (argv[i + 1] == "console")
+            if (std::string(argv[i + 1]) == "console")
                 m->printWithPath(std::cout, mazePath);
             // else if (argv[i + 1] == "gui") {
             //     QGraphicsScene scene;
@@ -258,6 +268,10 @@ int main( int argc, char* argv[] )
 
         }
     }
+
+    delete m;
+    delete eng;
+    delete g;
 
     // MazeWithWalls m( 4, 4 );
     // m.print( std::cout );

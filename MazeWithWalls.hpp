@@ -36,6 +36,9 @@ public:
 	/// @param h Height of the maze. Cells will be labeles [0, h).
     MazeWithWalls( int w, int h );
 
+    /// virtual destructor
+    virtual ~MazeWithWalls(){};
+
     /// Returns width of the maze.
 	virtual int width() const;
 
@@ -88,7 +91,7 @@ public:
 	/// The path is given as a sequence of cells, each identified as (x,y).
 	virtual void printWithPath( std::ostream& ostr, const PathType& p ) const;
 
-    virtual void displayOnScene( QGraphicsScene* s, const PathType& p = PathType() ) const;
+    //virtual void displayOnScene( QGraphicsScene* s, const PathType& p = PathType() ) const;
 
 };
 

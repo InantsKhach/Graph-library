@@ -12,6 +12,9 @@ class AbstractVertexPredicate
 public:
 	/// Returns value of this predicate, for graph vertex 'u'.
 	virtual double operator()( int u ) const = 0;
+
+    /// Virtual destructor
+    virtual ~AbstractVertexPredicate(){};
 };
 
 
