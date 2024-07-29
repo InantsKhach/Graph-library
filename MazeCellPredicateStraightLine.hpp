@@ -17,6 +17,9 @@ public:
 		: MazeCellSimplePredicate( graphRep )
 		{ }
 
+    /// virtual destructor
+    virtual ~MazeCellPredicateStraightLine(){};
+
     /// Sets that the start point in maze is assumed to be 'arg'.
     void setStart( const Cell& arg );
 

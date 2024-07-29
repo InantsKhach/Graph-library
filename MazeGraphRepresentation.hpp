@@ -44,7 +44,9 @@ public:
 		GraphPath result( p.size() );
 		std::transform( p.cbegin(), p.cend(), 
 				result.begin(), 
-			  [this](int u) { return vertexToCell(u); } );
+			  [this](const Cell& c) { return cellToVertex(c); } );
+
+        return result;
 	}
 
 	MazePath verticesToCells( const GraphPath& p ) const 
@@ -52,7 +54,9 @@ public:
 		MazePath result(p.size());
 		std::transform(p.cbegin(), p.cend(),
 			result.begin(),
-			[this](const Cell& c) { return cellToVertex(c);});
+			[this](int u) { return vertexToCell(u);});
+
+        return result;
 	}
 
 	// ...

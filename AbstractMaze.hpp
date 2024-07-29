@@ -24,6 +24,9 @@ public:
     /// How a path in the maze is represented.
     typedef std::vector< Cell > PathType;
 
+    /// virtual destructor
+    virtual ~AbstractMaze(){};
+
 public:
     /// Returns width of the maze.
     virtual int width() const = 0;
@@ -46,8 +49,8 @@ public:
     /// Outputs maze into console stream 'ostr', with path 'p'.
     virtual void printWithPath( std::ostream& ostr, const PathType& p ) const = 0;
 
-    virtual void displayOnScene( QGraphicsScene* s, 
-            const PathType& p = PathType() ) const = 0;
+    //virtual void displayOnScene( QGraphicsScene* s,
+    //        const PathType& p = PathType() ) const = 0;
 };
 
 #endif // ABSTRACT_MAZE_HPP

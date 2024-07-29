@@ -13,6 +13,8 @@ public:
 
     virtual void generate( MazeWithWalls& mz, GenType& gen );
 
+    virtual ~RandomizedDFS(){};
+
 private:
 
     std::vector< Cell > get_neighbours( Cell& p, MazeWithWalls& mz );

@@ -12,6 +12,8 @@ public:
 
     virtual void generate( MazeWithWalls& mz, GenType& gen );
 
+    virtual ~RecursiveDivision(){};
+
 private:
     void handle( MazeWithBoxes& mz, int start_height, int start_width, int end_height, int end_width,
                                                         std::vector< std::vector< bool > >& used, GenType& gen );

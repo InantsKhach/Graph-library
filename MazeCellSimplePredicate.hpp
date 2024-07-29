@@ -23,6 +23,10 @@ public:
 		: _graphRep( graphRep )
 		{ }
 
+    /// virtual destructor
+    virtual ~MazeCellSimplePredicate(){};
+
+
 	/// Sets that the target point in maze is assumed to be 'arg'.
 	void setTarget( const Cell& arg );
 
