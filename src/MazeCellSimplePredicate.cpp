@@ -1,5 +1,5 @@
-#include "MazeCellSimplePredicate.hpp"
-#include "MazeGraphRepresentation.hpp"
+#include "../include/MazeCellSimplePredicate.hpp"
+#include "../include/MazeGraphRepresentation.hpp"
 #include <cstdlib>
 
 void MazeCellSimplePredicate::setTarget( const Cell& arg  )

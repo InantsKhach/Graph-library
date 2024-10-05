@@ -7,8 +7,6 @@
 
 #include "types.hpp"
 
-// Forward declarations
-class QGraphicsScene;
 
 class AbstractMaze
 {
@@ -49,8 +47,6 @@ public:
     /// Outputs maze into console stream 'ostr', with path 'p'.
     virtual void printWithPath( std::ostream& ostr, const PathType& p ) const = 0;
 
-    //virtual void displayOnScene( QGraphicsScene* s,
-    //        const PathType& p = PathType() ) const = 0;
 };
 
 #endif // ABSTRACT_MAZE_HPP

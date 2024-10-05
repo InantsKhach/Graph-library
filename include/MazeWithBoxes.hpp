@@ -8,9 +8,6 @@
 #include "utility.hpp"
 #include "AbstractMaze.hpp"
 
-// Forward declarations
-class QGraphicsScene;
-
 
 /// This class represents a 2D rectangular maze.
 class MazeWithBoxes : public AbstractMaze
@@ -62,9 +59,6 @@ public:
 	/// The path is given as a sequence of cells, each identified as (x,y).
 	virtual void printWithPath( std::ostream& ostr, 
 									const PathType& p ) const;
-
-	//virtual void displayOnScene( QGraphicsScene* s,
-	//		const PathType& p = PathType() ) const;
 };
 
 

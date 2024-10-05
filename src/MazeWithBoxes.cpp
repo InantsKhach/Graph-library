@@ -8,8 +8,8 @@
 //#include <QGraphicsItem>
 //#include <QGraphicsScene>
 
-#include "MazeWithBoxes.hpp"
-#include "types.hpp"
+#include "../include/MazeWithBoxes.hpp"
+#include "../include/types.hpp"
 
 MazeWithBoxes::MazeWithBoxes( int w, int h )
 {
@@ -82,7 +82,6 @@ void MazeWithBoxes::setBlank( Cell pt, int cost )
     int x = pt.c, y = pt.r; 
     maze[x][y] = cost;
 }
-
 
 void MazeWithBoxes::setOpen()
 {

@@ -1,10 +1,4 @@
-#include "MazeWithWalls.hpp"
-//#include <QBrush>
-//#include <QPen>
-//#include <QString>
-//#include <QFont>
-//#include <QGraphicsItem>
-//#include <QGraphicsScene>
+#include "../include/MazeWithWalls.hpp"
 
 #include <algorithm>
 #include <iomanip>
@@ -61,7 +55,6 @@ bool MazeWithWalls::isVerticalWall( int x, int y ) const
     return ver[x][y];
 }
 
-
 void MazeWithWalls::setHorizontalWall( int x, int y )
 {
     hor[x][y] = true;
@@ -91,12 +84,10 @@ void MazeWithWalls::setClosed()
             std::vector< bool >( height(), true ) );
 }
 
-
 bool MazeWithWalls::canBeOn( const Cell& ) const 
 {
     return true;
 }
-
 
 bool MazeWithWalls::canGoFrom( const Cell& pt, 
                                             Direction dir ) const 
@@ -168,8 +159,6 @@ void MazeWithWalls::print( std::ostream& ostr ) const
     
 }
 
-
-
 void MazeWithWalls::printWithPath( std::ostream& ostr, 
                                         const PathType& p ) const
 {
@@ -210,51 +199,3 @@ void MazeWithWalls::printWithPath( std::ostream& ostr,
         ostr << '\n';
     }
 }
-
-//void MazeWithWalls::displayOnScene(QGraphicsScene* s, const PathType& p ) const
-//{
-//    std::vector<std::vector<bool> > is_path(
-//        width(),
-//        std::vector<bool>(height(), false));
-//
-//    for (const auto& path_item : p)
-//        is_path[path_item.c][path_item.r] = true;
-//
-//    QBrush grayBrush(Qt::lightGray);
-//    QBrush pathBrush(Qt::darkYellow);
-//    QBrush closedBrush(Qt::black);
-//    QPen outlinePen(Qt::black);
-//
-//    //int space_w = 0, space_h = 0;
-//
-//
-//    for (int i = 0; i < height(); ++i)
-//    {
-//        for (int j = 0; j < width(); ++j)
-//        {
-//            QGraphicsItem* cellItem =
-//                s->addRect(j * CELL_W + SPACING, i * CELL_H + SPACING,
-//                                                    CELL_W, CELL_H, outlinePen, grayBrush);
-//            QString str = QString::number(cells[j][i]);
-//            QGraphicsItem* textItem =
-//                s->addText(str, QFont("Arial", 20));
-//            textItem->setParentItem(cellItem);
-//
-//            if(j != width() - 1 && ver[j][i])
-//            {
-//                s->addLine(j * CELL_W, i * CELL_H, j * CELL_W + SPACING, i * CELL_H + SPACING);
-//            }
-//        }
-//
-//        for (int j = 0; j < width(); ++j)
-//        {
-//            if (i != height() - 1 && hor[j][i])
-//            {
-//                s->addLine(j * CELL_W, i * CELL_H, j * CELL_W + SPACING, i * CELL_H + SPACING);
-//            }
-//        }
-//    }
-//
-//
-//    /// Same with MazeWithBoxes
-//}

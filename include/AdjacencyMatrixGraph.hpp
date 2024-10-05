@@ -38,7 +38,6 @@ class AdjacencyMatrixGraph : public AbstractGraphStorage{
 
    virtual void setEdgeValue( int u, int v, double value );
 
-
 };
 
 #endif
