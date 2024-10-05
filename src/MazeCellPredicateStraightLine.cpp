@@ -1,5 +1,5 @@
-#include "MazeGraphRepresentation.hpp"
-#include "MazeCellPredicateStraightLine.hpp"
+#include "../include/MazeGraphRepresentation.hpp"
+#include "../include/MazeCellPredicateStraightLine.hpp"
 #include <cstdlib>
 
 void MazeCellPredicateStraightLine::setStart( const Cell& arg  )

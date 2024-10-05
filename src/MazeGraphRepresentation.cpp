@@ -1,6 +1,6 @@
-#include "MazeGraphRepresentation.hpp"
-#include "AbstractGraphStorage.hpp"
-#include "AbstractMaze.hpp"
+#include "../include/MazeGraphRepresentation.hpp"
+#include "../include/AbstractGraphStorage.hpp"
+#include "../include/AbstractMaze.hpp"
 
 MazeGraphRepresentation::MazeGraphRepresentation( const AbstractMaze* mz, AbstractGraphStorage* g )
 {
@@ -12,7 +12,6 @@ MazeGraphRepresentation::MazeGraphRepresentation( const AbstractMaze* mz, Abstra
     {
         g->addVertex();
     }
-
 
     for( int i = 0; i < w ; ++i )
     {

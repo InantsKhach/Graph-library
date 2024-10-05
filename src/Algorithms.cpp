@@ -1,4 +1,4 @@
-#include "Algorithms.hpp"
+#include "../include/Algorithms.hpp"
 #include <queue>
 #include <climits>
 #include <iostream>

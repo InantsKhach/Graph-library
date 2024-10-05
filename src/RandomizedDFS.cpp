@@ -1,6 +1,6 @@
-#include "RandomizedDFS.hpp"
-#include "MazeWithBoxes.hpp"
-#include "MazeWithWalls.hpp"
+#include "../include/RandomizedDFS.hpp"
+#include "../include/MazeWithBoxes.hpp"
+#include "../include/MazeWithWalls.hpp"
 #include <stack>
 #include <random>
 #include <algorithm>
@@ -36,7 +36,6 @@ void RandomizedDFS::generate( MazeWithBoxes& maze, GenType& gen )
                 break;
             }
         }
-        
     }
 
     for( int i = 0; i < maze.width(); ++i )
@@ -89,7 +88,6 @@ void RandomizedDFS::generate( MazeWithWalls& maze, GenType& gen )
             }
         }
     }
-
 }
 
 std::vector< Cell > RandomizedDFS::get_neighbours( Cell& p, MazeWithWalls& mz )

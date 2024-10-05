@@ -1,6 +1,6 @@
-#include "RecursiveDivision.hpp"
-#include "MazeWithBoxes.hpp"
-#include "MazeWithWalls.hpp"
+#include "../include/RecursiveDivision.hpp"
+#include "../include/MazeWithBoxes.hpp"
+#include "../include/MazeWithWalls.hpp"
 #include <random>
 #include <iostream>
 
@@ -43,7 +43,7 @@ void RecursiveDivision::handle(
         if( !used[i][horizontal_wall] )
             mz.setWall( Cell(i, horizontal_wall) );
 
-    std::uniform_int_distribution< int > dist( 4, 7 );
+    std::uniform_int_distribution< int > dist( 0, 3 );
     int box = dist( gen );
 
 

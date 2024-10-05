@@ -1,4 +1,4 @@
-#include "AdjacencyMatrixGraph.hpp"
+#include "../include/AdjacencyMatrixGraph.hpp"
 
 AdjacencyMatrixGraph::AdjacencyMatrixGraph( int size ) 
 {
@@ -26,16 +26,12 @@ int AdjacencyMatrixGraph::E() const
 
 bool AdjacencyMatrixGraph::hasEdge( int u, int v ) const
 {
-   if(data[u][v] != 0)
-     return true;
-    
-    return false;
+    return data[u][v] != 0;
 }
 
 void AdjacencyMatrixGraph::getEdges( std::vector<WeightedEdgeType> &es ) const
 {
-
-    es.clear();
+   es.clear();
 
    for( int i = 0; i < data.size() - 1; ++i )
    {
@@ -49,8 +45,7 @@ void AdjacencyMatrixGraph::getEdges( std::vector<WeightedEdgeType> &es ) const
 
 void AdjacencyMatrixGraph::getEdges( std::vector<EdgeType> &es ) const
 {
-
-    es.clear();
+   es.clear();
 
    for( int i = 0; i < data.size() - 1; ++i )
    {
@@ -75,7 +70,6 @@ int AdjacencyMatrixGraph::getAdjacentVerticesCount( int u ) const
 
 void AdjacencyMatrixGraph::getAdjacentVertices( int u, std::vector<int> &vs ) const
 {
-
     vs.clear();
 
     for( int i = 0; i < data.size(); ++i )
@@ -87,11 +81,6 @@ void AdjacencyMatrixGraph::getAdjacentVertices( int u, std::vector<int> &vs ) co
 
 void AdjacencyMatrixGraph::clear()
 {
-    //for( int i = 0; i < data.size(); ++i)
-    //{
-    //    data[i].clear();
-    //}
-
     data.clear();
 }
 
@@ -109,8 +98,8 @@ int AdjacencyMatrixGraph::addVertex()
 
 void AdjacencyMatrixGraph::addEdge( int u, int v, double cost )
 {
-   data[u][v] = cost;
-   data[v][u] = cost;
+    data[u][v] = cost;
+    data[v][u] = cost;
 }
 
 void AdjacencyMatrixGraph::removeEdge( int u, int v )
