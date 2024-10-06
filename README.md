@@ -29,4 +29,9 @@ The project allows you to:
 
 ** ⚙️ Command Line Options **
 * `-maze <width> <height> <type>`: Specify the maze dimensions and type (walls or boxes).
+* `-gen <type>`: Choose the generation algorithm (`dfs`, `rec_div`).
+* `-graph <type>`: Choose the graph representation (`list`, `matrix`).
+* `-run <algorithm>`: Run the desired pathfinding algorithm (`dfs`, `bfs`, `dijkstra`, `astar`).
+* `-display <method>`: Display the maze and path (`console`).
+
 
