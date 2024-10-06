@@ -27,7 +27,7 @@ The project allows you to:
   * Dijkstra's Algorithm
   * A* Search (with customizable heuristics)
 
-** ⚙️ Command Line Options **
+## ⚙️ Command Line Options 
 * `-maze <width> <height> <type>`: Specify the maze dimensions and type (walls or boxes).
 * `-gen <type>`: Choose the generation algorithm (`dfs`, `rec_div`).
 * `-graph <type>`: Choose the graph representation (`list`, `matrix`).
