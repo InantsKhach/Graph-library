@@ -1,3 +1,5 @@
+# Graph Library
+
 Welcome to the Maze & Graph Algorithm Library, a C++ project that blends the world of mazes with powerful graph traversal algorithms. This project offers an exciting way to visualize and explore different algorithms for solving mazes using both classic and advanced graph theory approaches.
 
 ## 🚀 Project Overview
