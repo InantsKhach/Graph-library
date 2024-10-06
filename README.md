@@ -11,7 +11,7 @@ The project allows you to:
 * Run algorithms such as **BFS, DFS, Dijkstra's Algorithm**, and **A*** to find paths through the maze.
 * Visualize the resulting paths with a clean and customizable console output.
   
-**🔧 Features**
+## 🔧 Features
 * Multiple Maze Types:
   * Maze with Walls
   * Maze with Boxes
