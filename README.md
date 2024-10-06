@@ -13,7 +13,7 @@ The project allows you to:
   
 **🔧 Features**
 * Multiple Maze Types:
-** Maze with Walls
+  * Maze with Walls
 Maze with Boxes
 Maze Generation Techniques:
 Randomized Depth-First Search
