@@ -26,3 +26,7 @@ The project allows you to:
   * Depth-First Search (DFS)
   * Dijkstra's Algorithm
   * A* Search (with customizable heuristics)
+
+** ⚙️ Command Line Options **
+* `-maze <width> <height> <type>`: Specify the maze dimensions and type (walls or boxes).
+
