@@ -6,7 +6,7 @@ Welcome to the Maze & Graph Algorithm Library, a C++ project that blends the wor
 
 The project allows you to:
 
-Generate mazes using different generation techniques like Randomized Depth-First Search and Recursive Division.
+**Generate mazes** using different generation techniques like Randomized Depth-First Search and Recursive Division.
 Convert mazes into graphs for easy algorithmic processing.
 Run algorithms such as BFS, DFS, Dijkstra's Algorithm, and A* to find paths through the maze.
 Visualize the resulting paths with a clean and customizable console output.
