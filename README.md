@@ -14,15 +14,15 @@ The project allows you to:
 **🔧 Features**
 * Multiple Maze Types:
   * Maze with Walls
-Maze with Boxes
-Maze Generation Techniques:
-Randomized Depth-First Search
-Recursive Division
-Graph Representations:
-Adjacency List
-Adjacency Matrix
-Algorithms Implemented:
-Breadth-First Search (BFS)
-Depth-First Search (DFS)
-Dijkstra's Algorithm
-A* Search (with customizable heuristics)
+  * Maze with Boxes
+* Maze Generation Techniques:
+  * Randomized Depth-First Search
+  * Recursive Division
+* Graph Representations:
+  * Adjacency List
+  * Adjacency Matrix
+* Algorithms Implemented:
+  * Breadth-First Search (BFS)
+  * Depth-First Search (DFS)
+  * Dijkstra's Algorithm
+  * A* Search (with customizable heuristics)
