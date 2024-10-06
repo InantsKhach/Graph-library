@@ -10,9 +10,10 @@ The project allows you to:
 * **Convert mazes into graphs** for easy algorithmic processing.
 * Run algorithms such as **BFS, DFS, Dijkstra's Algorithm**, and **A*** to find paths through the maze.
 * Visualize the resulting paths with a clean and customizable console output.
-🔧 Features
-Multiple Maze Types:
-Maze with Walls
+  
+**🔧 Features**
+* Multiple Maze Types:
+** Maze with Walls
 Maze with Boxes
 Maze Generation Techniques:
 Randomized Depth-First Search
