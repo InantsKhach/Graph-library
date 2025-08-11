@@ -2,6 +2,7 @@
 #include <queue>
 #include <climits>
 #include <iostream>
+#include <algorithm>
 
 #define INF std::numeric_limits<double>::max()
 

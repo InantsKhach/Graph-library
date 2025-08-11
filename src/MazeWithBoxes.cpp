@@ -1,5 +1,6 @@
 
 #include <iomanip>
+#include <algorithm>
 
 //#include <QBrush>
 //#include <QPen>
